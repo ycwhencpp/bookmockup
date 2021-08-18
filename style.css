@@ -25,7 +25,10 @@ section .book:hover{
      transform:rotateY(35deg) ;
      box-shadow: 0px 20px 20px rgba(0,0,0,0.2);
 }
-
+section .book:active{
+    transform:rotateY(180deg);
+    
+}
 section .book::before{
     content:"";
     position:absolute;
@@ -33,9 +36,18 @@ section .book::before{
     height:100%;
     background: url(./images/side.jpg);
     background-position: center;
-    
     transform-origin: left;
-    transform: rotateY(120deg);
+    transform: rotateY(90deg);
+}
+section .book::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: url(./images/back.jpg);
+    background-position: center;
+    transform-origin: center;
+    transform: rotateY(180deg) translateZ(60px);
 }
 section .book img{
     width:100%;
@@ -43,4 +55,5 @@ section .book img{
     position:absolute;
     top:0;
     left:0;
+    object-fit: cover;
 }
